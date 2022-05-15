@@ -60,17 +60,11 @@
           let li = React.createElement(
             'li',
             null,
-            // React.createElement('label', { for: i }, movie.name),
-            // React.createElement(
-            //   'button',
-            //   { id: i, onClick: handleChange },
-            //   movie.watched ? 'Watched' : 'To Watch'
-            // )
           );
           return (
             <li>
-              <label for="{i}">{movie.name}</label>
-              <button id="{i}" onClick={handleChange}>
+              <label htmlFor={i}>{movie.name}</label>
+              <button id={i} onClick={handleChange}>
                 {movie.watched ? 'Watched' : 'To Watch'}
               </button>
             </li>
