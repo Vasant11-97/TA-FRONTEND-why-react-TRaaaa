@@ -1,4 +1,4 @@
-let cardInfo = [
+let articles = [
   {
     title: 'City Lights in New York',
     date: new Date('2017-01-26'),
