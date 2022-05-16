@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Card</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script
+      src="https://kit.fontawesome.com/4b4a150b01.js"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <script src="./data.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      function Article() {
+        return articles.map((cardInfo) => {
+          return (
+            <>
+              <img className="image" src={cardInfo.imageURL} alt="" />
+              <div className="category">{cardInfo.category.toUpperCase()}</div>
+              <div className="date">
+                {cardInfo.date.getDate()}
+                <small>
+                  {cardInfo.date
+                    .toLocaleString('default', { month: 'long' })
+                    .slice(0, 3)
+                    .toUpperCase()}
+                </small>
+              </div>
+              <h1>{cardInfo.title}</h1>
+              <strong>{cardInfo.subTitle}</strong>
+              <p>{cardInfo.description}</p>
+              <div>
+                <span>
+                  <i className="fa-solid fa-clock">6 mins ago</i>{' '}
+                </span>
+                <span>
+                  <i class="fas fa-comments"></i>
+                  {cardInfo.comments} comments
+                </span>
+              </div>
+            </>
+          );
+        });
+      }
+      ReactDOM.render(<Article />, document.getElementById('root'));
+    </script>
+  </body>
+</html>
