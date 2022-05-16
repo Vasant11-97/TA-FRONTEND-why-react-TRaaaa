@@ -24,33 +24,38 @@
   <body>
     <div id="root"></div>
     <script type="text/babel">
-        let card = (
-          <>
-            <img className="image" src={cardInfo.imageURL} alt="" />
-            <div className="category">{cardInfo.category.toUpperCase()}</div>
-            <div className="date">
-              {cardInfo.date.getDate()}
-              <small>
-                {cardInfo.date
-                  .toLocaleString('default', { month: 'long' })
-                  .slice(0, 3).toUpperCase()}
-              </small>
-            </div>
-            <h1>{cardInfo.title}</h1>
-            <strong>{cardInfo.subTitle}</strong>
-            <p>{cardInfo.description}</p>
-            <div>
-              <span>
-                <i className="fa-solid fa-clock">6 mins ago</i>{' '}
-              </span>
-              <span>
-                <i class="fas fa-comments"></i>
-                {cardInfo.comments} comments
-              </span>
-            </div>
-          </>
-        );
-      ReactDOM.render(card, document.getElementById('root'));
+      function Article() {
+        return articles.map((cardInfo) => {
+          return (
+            <>
+              <img className="image" src={cardInfo.imageURL} alt="" />
+              <div className="category">{cardInfo.category.toUpperCase()}</div>
+              <div className="date">
+                {cardInfo.date.getDate()}
+                <small>
+                  {cardInfo.date
+                    .toLocaleString('default', { month: 'long' })
+                    .slice(0, 3)
+                    .toUpperCase()}
+                </small>
+              </div>
+              <h1>{cardInfo.title}</h1>
+              <strong>{cardInfo.subTitle}</strong>
+              <p>{cardInfo.description}</p>
+              <div>
+                <span>
+                  <i className="fa-solid fa-clock">6 mins ago</i>{' '}
+                </span>
+                <span>
+                  <i class="fas fa-comments"></i>
+                  {cardInfo.comments} comments
+                </span>
+              </div>
+            </>
+          );
+        });
+      }
+      ReactDOM.render(<Article />, document.getElementById('root'));
     </script>
   </body>
 </html>
