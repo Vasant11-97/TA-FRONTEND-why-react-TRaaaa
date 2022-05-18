@@ -1,0 +1,19 @@
+.pri {
+  background-color: green;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  color: wheat;
+}
+.sec {
+  background-color: rgb(192, 85, 85);
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  color: wheat;
+}
+
+.ter {
+  background-color: yellow;
+  padding: 0.5rem 1rem;
+  border-radius: 10px;
+  color: black;
+}
